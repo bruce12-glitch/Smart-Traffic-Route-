@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Route Optimizer</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Traffic Route Optimizer</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Input Your Data</h2>
+            <form id="route-form">
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" required autocomplete="off">
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required autocomplete="off">
+                <input type="submit" value="Find Route">
+            </form>
+        </section>
+        <section>
+            <h2>Optimized Route</h2>
+            <div id="route-output" aria-live="polite"></div>
+            <noscript>
+                <p>Please enable JavaScript to use the route optimizer demo.</p>
+            </noscript>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Smart Traffic Route Optimizer</p>
+    </footer>
+    <script type="module" src="../src/js/route.js"></script>
+</body>
+</html>

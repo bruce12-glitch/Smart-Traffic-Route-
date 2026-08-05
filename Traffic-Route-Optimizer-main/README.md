@@ -1,48 +1,28 @@
- Smart Traffic Route Optimizer
-An interactive web application that demonstrates how AI-based pathfinding algorithms find the most efficient route in a dynamic environment.
+# Traffic Route Optimizer — app README
 
- Overview
-This project simulates real-world traffic navigation using Artificial Intelligence concepts. Users can create a custom grid, add obstacles or traffic conditions, and visualize how algorithms determine the optimal path step by step.
+This folder contains the web demo app for the Smart Traffic Route Optimizer. The repository root contains an overview README and this folder contains the app-specific code, organized by feature.
 
- Problem Statement
-Finding the best route in real-world traffic is complex due to changing conditions such as congestion, roadblocks, and varying travel costs. Traditional methods often fail to adapt dynamically.
+Project structure (feature-based)
+- public/ — Static public entry (index.html). Intended to be served by a static server or opened in a browser for quick preview.
+- src/
+ - js/ — UI code and feature glue (route form handler)
+ - css/ — Styling for the demo
+ - algorithms/ — Algorithm implementations (A*, UCS, helpers)
+- assets/ (optional) — images, screenshots, and other static assets
 
- Solution
-This application uses AI search algorithms like **A\*** and **Uniform Cost Search (UCS)** to compute the most efficient path while considering traffic conditions. It also provides a visual representation of how the algorithm explores and reaches the solution.
+Quick start (preview)
+1. Open Traffic-Route-Optimizer-main/public/index.html in a browser, or run a static server from the project root (e.g., `npx serve Traffic-Route-Optimizer-main/public`).
+2. The current demo shows a placeholder route result — replace the placeholder algorithm in src/algorithms/astar.js with a real implementation to enable full functionality.
 
-Features
-- Interactive grid-based map  
-- Set start and destination points  
-- Add obstacles and traffic conditions  
-- A* and UCS algorithm support  
-- Real-time pathfinding visualization  
-- Performance comparison (cost, nodes explored, time)  
-- Clean and modern UI  
+Where to extend
+- Implement grid/graph parsing and a full A* in src/algorithms/astar.js.
+- Add UI components under src/js/ (modularize into ui/, forms/, viz/ for maintainability).
+- Add unit tests for algorithm correctness and a small build/dev script (optional).
 
-Tech Stack
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla)  
+Contributing
+- Follow feature-driven organization. Add new features under src/<feature-name> and update this README with usage notes.
+- Keep public/ as the static entry; keep logic in src/ for easier testing and bundling.
 
-AI Concepts Used
-- A* Search Algorithm  
-- Uniform Cost Search  
-- Heuristic Functions (Euclidean & Manhattan)  
-- Graph-based Problem Solving  
-- Priority Queue (Min Heap)  
-
-Demo
-Live Demo:  
-https://trafficrouteoptimizer.vercel.app
-
-or 
-
-Scan QR to try the application 
-![QR traffic route Optimizer](https://github.com/user-attachments/assets/28f2d933-3e0f-47be-a187-6a6daed0bb23)
-
-Screenshots
-<img width="1888" height="912" alt="Screenshot 2026-03-24 171456" src="https://github.com/user-attachments/assets/b177a158-6651-41f8-b681-c5e5fb414c8f" />
-
-
-
+License and attribution
+See repository root for license and project info.
  

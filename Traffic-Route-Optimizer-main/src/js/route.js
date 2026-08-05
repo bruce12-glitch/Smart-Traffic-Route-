@@ -1,5 +1,6 @@
 import { aStar } from '../algorithms/search.js';
-import { findPathGrid } from '../algorithms/grid.js';
+import { findPathGrid, DEMO_GRID } from '../algorithms/grid.js';
+import { renderGrid } from './visualize.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('route-form');

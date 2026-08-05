@@ -24,8 +24,9 @@ export function findPathGrid(startCoordStr, goalCoordStr, options={heuristic:'ma
   const heuristicName = options.heuristic || 'manhattan';
   const heuristic = heuristicName === 'euclidean' ? euclidean : manhattan;
 
-  // Demo grid: 7x7 with some obstacles
-  const grid = [
+  // Demo grid: 7x7 with some obstacles (exported as DEMO_GRID for visualization)
+  // 0 = free, 1 = obstacle
+  export const DEMO_GRID = [
     [0,0,0,0,0,0,0],
     [0,1,1,0,1,1,0],
     [0,0,0,0,0,0,0],
@@ -34,6 +35,7 @@ export function findPathGrid(startCoordStr, goalCoordStr, options={heuristic:'ma
     [0,1,1,1,1,1,0],
     [0,0,0,0,0,0,0]
   ];
+  const grid = DEMO_GRID;
   const width = grid[0].length, height = grid.length;
 
   function inBounds([x,y]){ return x>=0 && x<width && y>=0 && y<height; }

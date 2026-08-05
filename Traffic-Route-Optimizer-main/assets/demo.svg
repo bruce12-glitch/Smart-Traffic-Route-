@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700">
+  <style>
+    .cell{fill:#fff;stroke:#e0e0e0}
+    .obs{fill:#333}
+    .path{fill:rgba(76,175,80,0.85)}
+    .dot{fill:#2196F3}
+    @keyframes moveDot { 0% { transform: translate(0px,0px); } 100% { transform: translate(280px,280px); } }
+    .anim{animation: moveDot 2.5s linear infinite}
+  </style>
+  <!-- simple 7x7 grid preview -->
+  <g id="grid">
+    <!-- cells -->
+    <g transform="translate(20,20)">
+      <!-- rows -->
+      <!-- background cells generated manually for portability -->
+      <rect x="0" y="0" width="40" height="40" class="cell" />
+      <!-- rest omitted in SVG for brevity; this is a placeholder animated demo -->
+    </g>
+  </g>
+  <!-- animated dot as demo of path movement (illustrative) -->
+  <g transform="translate(40,40)">
+    <circle cx="20" cy="20" r="10" class="dot anim" />
+  </g>
+</svg>

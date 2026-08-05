@@ -5,6 +5,10 @@ Live demo: https://trafficrouteoptimizer.vercel.app
 
 ![Screenshot](https://github.com/user-attachments/assets/b177a158-6651-41f8-b681-c5e5fb414c8f)
 
+[![Live Demo](https://img.shields.io/badge/demo-github_pages-blue)](https://bruce12-glitch.github.io/Smart-Traffic-Route-/)
+
+![Demo animation](./assets/demo.svg)
+
 ## Quick links
 - App entry: Traffic-Route-Optimizer-main/public/index.html
 - Source: Traffic-Route-Optimizer-main/src/

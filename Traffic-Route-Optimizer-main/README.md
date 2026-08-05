@@ -1,48 +1,41 @@
- Smart Traffic Route Optimizer
-An interactive web application that demonstrates how AI-based pathfinding algorithms find the most efficient route in a dynamic environment.
+﻿# Smart Traffic Route Optimizer — Live Demo & Overview
 
- Overview
-This project simulates real-world traffic navigation using Artificial Intelligence concepts. Users can create a custom grid, add obstacles or traffic conditions, and visualize how algorithms determine the optimal path step by step.
+Live demo: https://trafficrouteoptimizer.vercel.app  
+(or open Traffic-Route-Optimizer-main/public/index.html locally)
 
- Problem Statement
-Finding the best route in real-world traffic is complex due to changing conditions such as congestion, roadblocks, and varying travel costs. Traditional methods often fail to adapt dynamically.
+![Screenshot](https://github.com/user-attachments/assets/b177a158-6651-41f8-b681-c5e5fb414c8f)
 
- Solution
-This application uses AI search algorithms like **A\*** and **Uniform Cost Search (UCS)** to compute the most efficient path while considering traffic conditions. It also provides a visual representation of how the algorithm explores and reaches the solution.
+## Quick links
+- App entry: Traffic-Route-Optimizer-main/public/index.html
+- Source: Traffic-Route-Optimizer-main/src/
+- Algorithms: Traffic-Route-Optimizer-main/src/algorithms/
+- Tests: Traffic-Route-Optimizer-main/test/
 
-Features
-- Interactive grid-based map  
-- Set start and destination points  
-- Add obstacles and traffic conditions  
-- A* and UCS algorithm support  
-- Real-time pathfinding visualization  
-- Performance comparison (cost, nodes explored, time)  
-- Clean and modern UI  
+## How to run locally
+1. Clone the repo and switch to branch: `git checkout bruce12-glitch-legendary-disco`
+2. Install dev deps: `npm ci`
+3. Run a static dev server: `npm run dev` and open the provided URL, or open the file `Traffic-Route-Optimizer-main/public/index.html` in your browser
+4. Run tests: `npm test`
+5. Lint: `npm run lint`
 
-Tech Stack
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla)  
+## Folder structure (feature-based)
+- Traffic-Route-Optimizer-main/
+  - public/ — static entry (index.html, canvas viewer)
+  - src/
+    - js/ — UI modules (route.js, visualize.js)
+    - css/ — styles
+    - algorithms/ — search.js (A*/UCS), grid.js (grid A*)
+  - test/ — unit tests for algorithms
+  - assets/ — images/screenshots (place any project images here)
 
-AI Concepts Used
-- A* Search Algorithm  
-- Uniform Cost Search  
-- Heuristic Functions (Euclidean & Manhattan)  
-- Graph-based Problem Solving  
-- Priority Queue (Min Heap)  
+> Images used in this README were provided by the project owner.
 
-Demo
-Live Demo:  
-https://trafficrouteoptimizer.vercel.app
-
-or 
-
-Scan QR to try the application 
-![QR traffic route Optimizer](https://github.com/user-attachments/assets/28f2d933-3e0f-47be-a187-6a6daed0bb23)
-
-Screenshots
-<img width="1888" height="912" alt="Screenshot 2026-03-24 171456" src="https://github.com/user-attachments/assets/b177a158-6651-41f8-b681-c5e5fb414c8f" />
-
-
-
- 
+## Recent commits (top 8)
+- f282630 2026-08-05 10:07:46 +0530 Bruce — Add grid visualizer and export demo grid; wire UI to render path on canvas
+- 989948f 2026-08-05 10:05:59 +0530 Bruce — Add grid-based A* implementation, wire UI for grid mode and heuristics, and add grid unit test
+- ea283fe 2026-08-05 10:04:04 +0530 Bruce — Add search algorithms, tests, package.json, lint config, CI workflow, and assets folder
+- 06d20b7 2026-08-05 10:00:46 +0530 Bruce — Reorganize app into feature-based layout; add modular src and placeholder algorithm; update READMEs
+- 1e48e4e 2026-08-05 09:51:35 +0530 Bruce — Add minimal assets and accessibility fallback for demo
+- 7d79dd0 2026-07-13 11:36:51 +0530 Inbasekaran S — Revise README for 3D platform development
+- d10b3a6 2026-07-13 11:36:26 +0530 Inbasekaran S — Create README.md for Mitriva application
+- d1705d8 2026-04-10 12:37:21 +0530 bruce12-glitch — Updated 'index.html' with comprehensive comments explaining all lines of the code.

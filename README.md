@@ -1,24 +1,25 @@
-﻿# Smart Traffic Route Optimizer — repository overview
+﻿# Smart Traffic Route Optimizer
+A compact demo that illustrates AI pathfinding (A*, UCS) with a visual grid viewer.
 
-This repository contains a demo web application that demonstrates AI-based pathfinding (A*, UCS) and a simple frontend. The application code lives under Traffic-Route-Optimizer-main/ and is organized by feature.
+View live: https://trafficrouteoptimizer.vercel.app
 
-Getting started (quick preview)
-- Open Traffic-Route-Optimizer-main/public/index.html in a browser, or run a static server from the repo root, e.g.:
-  - npx serve Traffic-Route-Optimizer-main/public
-  - npx http-server Traffic-Route-Optimizer-main/public
+## Quick start
+```
+git clone <your-repo-url>
+cd <repo>
+git checkout bruce12-glitch-legendary-disco
+npm ci
+npm run dev
+```
+Open Traffic-Route-Optimizer-main/public/index.html or the dev server URL.
 
-Repository layout (high-level)
-- Traffic-Route-Optimizer-main/
-  - public/ — static entry (index.html)
-  - src/
-    - js/ — UI and feature glue code
-    - css/ — styles
-    - algorithms/ — pathfinding implementations and helpers
-  - README.md — app-specific documentation
+Commits from today are on branch `bruce12-glitch-legendary-disco` (see commit list below).
 
-Next steps and suggestions
-- Implement full A* / UCS in src/algorithms and add unit tests.
-- Add a small dev script (npm init + vite or serve) if you want live-reload while developing.
-- Move screenshots and demo assets to Traffic-Route-Optimizer-main/assets/.
-
-If you want, continue: convert algorithms to TypeScript, add tests, and add a CI workflow to lint and run tests on PRs.
+- f282630 2026-08-05 10:07:46 +0530 Bruce — Add grid visualizer and export demo grid; wire UI to render path on canvas
+- 989948f 2026-08-05 10:05:59 +0530 Bruce — Add grid-based A* implementation, wire UI for grid mode and heuristics, and add grid unit test
+- ea283fe 2026-08-05 10:04:04 +0530 Bruce — Add search algorithms, tests, package.json, lint config, CI workflow, and assets folder
+- 06d20b7 2026-08-05 10:00:46 +0530 Bruce — Reorganize app into feature-based layout; add modular src and placeholder algorithm; update READMEs
+- 1e48e4e 2026-08-05 09:51:35 +0530 Bruce — Add minimal assets and accessibility fallback for demo
+- 7d79dd0 2026-07-13 11:36:51 +0530 Inbasekaran S — Revise README for 3D platform development
+- d10b3a6 2026-07-13 11:36:26 +0530 Inbasekaran S — Create README.md for Mitriva application
+- d1705d8 2026-04-10 12:37:21 +0530 bruce12-glitch — Updated 'index.html' with comprehensive comments explaining all lines of the code.

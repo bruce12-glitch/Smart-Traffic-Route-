@@ -10,7 +10,7 @@ const graph = {
 };
 
 // Heuristic that underestimates true distance (admissible) for the test graph
-function heuristic(node, goal){
+function heuristic(node){
   const h = {
     'A': 3,
     'B': 2,

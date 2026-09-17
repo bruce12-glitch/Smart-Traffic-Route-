@@ -1,13 +1,12 @@
 import { aStar } from '../algorithms/search.js';
-import { findPathGrid, DEMO_GRID } from '../algorithms/grid.js';
-import { renderGrid } from './visualize.js';
+import { findPathGrid } from '../algorithms/grid.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('route-form');
   const output = document.getElementById('route-output');
   const modeSelect = document.getElementById('mode');
   const heuristicSelect = document.getElementById('heuristic');
-n  function showMessage(msg) {
+  function showMessage(msg) {
     if (output) output.textContent = msg;
   }
 

@@ -11,10 +11,22 @@ function parseCoord(s) {
 function manhattan([x1,y1],[x2,y2]){ return Math.abs(x1-x2)+Math.abs(y1-y2); }
 function euclidean([x1,y1],[x2,y2]){ return Math.hypot(x1-x2,y1-y2); }
 
+// Demo grid: 7x7 with some obstacles (exported for visualization)
+// 0 = free, 1 = obstacle
+export const DEMO_GRID = [
+  [0,0,0,0,0,0,0],
+  [0,1,1,0,1,1,0],
+  [0,0,0,0,0,0,0],
+  [0,1,0,1,0,1,0],
+  [0,0,0,0,0,0,0],
+  [0,1,1,1,1,1,0],
+  [0,0,0,0,0,0,0]
+];
+
 class MinHeap {
   constructor(){ this.h = []; }
   push(item, pr){ this.h.push({item,pr}); let i=this.h.length-1; while(i>0){ const p=Math.floor((i-1)/2); if(this.h[p].pr<=this.h[i].pr) break; [this.h[p],this.h[i]]=[this.h[i],this.h[p]]; i=p;} }
-  pop(){ if(this.h.length===0) return undefined; if(this.h.length===1) return this.h.pop(); const top=this.h[0]; this.h[0]=this.h.pop(); let i=0; while(true){ const l=2*i+1, r=2*i+2; let s=i; if(l<this.h.length && this.h[l].pr < this.h[s].pr) s=l; if(r<this.h.length && this.h[r].pr < this.h[s].pr) s=r; if(s===i) break; [this.h[i],this.h[s]]=[this.h[s],this.h[i]]; i=s; } return top; }
+  pop(){ if(this.h.length===0) return undefined; if(this.h.length===1) return this.h.pop(); const top=this.h[0]; this.h[0]=this.h.pop(); let i=0; for(;;){ const l=2*i+1, r=2*i+2; let s=i; if(l<this.h.length && this.h[l].pr < this.h[s].pr) s=l; if(r<this.h.length && this.h[r].pr < this.h[s].pr) s=r; if(s===i) break; [this.h[i],this.h[s]]=[this.h[s],this.h[i]]; i=s; } return top; }
   isEmpty(){ return this.h.length===0; }
 }
 
@@ -24,17 +36,7 @@ export function findPathGrid(startCoordStr, goalCoordStr, options={heuristic:'ma
   const heuristicName = options.heuristic || 'manhattan';
   const heuristic = heuristicName === 'euclidean' ? euclidean : manhattan;
 
-  // Demo grid: 7x7 with some obstacles (exported as DEMO_GRID for visualization)
-  // 0 = free, 1 = obstacle
-  export const DEMO_GRID = [
-    [0,0,0,0,0,0,0],
-    [0,1,1,0,1,1,0],
-    [0,0,0,0,0,0,0],
-    [0,1,0,1,0,1,0],
-    [0,0,0,0,0,0,0],
-    [0,1,1,1,1,1,0],
-    [0,0,0,0,0,0,0]
-  ];
+  // Demo grid: 7x7 with some obstacles (see DEMO_GRID at module scope)
   const grid = DEMO_GRID;
   const width = grid[0].length, height = grid.length;
 

@@ -22,7 +22,6 @@ export function renderGrid(canvasId, grid, path=[]) {
   }
 
   // draw path
-  const pathSet = new Set(path);
   for (const key of path){
     const [x,y] = key.split(',').map(Number);
     ctx.fillStyle = 'rgba(76,175,80,0.85)';

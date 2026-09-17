@@ -30,10 +30,28 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # index.html lives in public/ but references ../src/, so the site root
+      # must be Traffic-Route-Optimizer-main/ for those paths to resolve.
+      - name: Stage site
+        run: |
+          mkdir -p _site
+          cp Traffic-Route-Optimizer-main/public/index.html _site/index.html
+          cp -r Traffic-Route-Optimizer-main/src _site/src
+          cp -r Traffic-Route-Optimizer-main/assets _site/assets
+
+      - name: Verify assets resolve
+        run: |
+          for f in index.html src/js/route.js src/css/styles.css \
+                   src/algorithms/grid.js src/algorithms/search.js \
+                   src/js/visualize.js; do
+            test -f "_site/$f" || { echo "MISSING: $f"; exit 1; }
+          done
+          echo "All referenced assets staged."
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Traffic-Route-Optimizer-main/public
+          path: _site
 
   deploy:
     needs: build

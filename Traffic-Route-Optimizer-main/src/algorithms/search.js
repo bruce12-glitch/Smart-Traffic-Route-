@@ -23,7 +23,7 @@ class MinHeap {
     const top = this.heap[0];
     this.heap[0] = this.heap.pop();
     let i=0;
-    while(true){
+    for(;;){
       const l=this._left(i), r=this._right(i);
       let smallest=i;
       if(l < this.heap.length && this.heap[l].priority < this.heap[smallest].priority) smallest = l;
